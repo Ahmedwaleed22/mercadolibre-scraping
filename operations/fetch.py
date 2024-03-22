@@ -58,7 +58,7 @@ class FetchProducts:
           request = requests.get(product_link)
           soup = BeautifulSoup(request.text, 'html.parser')
           quantity = soup.find('span', class_='ui-pdp-buybox__quantity__available').text
-          delimiters = ["(", ")"]
+          delimiters = ["(", ")", "disponibles"]
 
           for delimiter in delimiters:
             quantity = " ".join(quantity.split(delimiter))
